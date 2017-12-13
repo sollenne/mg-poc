@@ -1,0 +1,48 @@
+<header class="mg-header">
+
+  <div class="mg-header-main">
+    <span><a mat-button routerLink="">MoneyGram Logo</a></span>
+
+    <span *ngFor="let link of topHeaderLinks">
+      <a mat-button routerLink="{{link.route}}">{{link.label}}</a>
+      <span>|</span>
+    </span>
+
+    <span>
+      <span><a mat-button [matMenuTriggerFor]="languageMenu">Flag 1</a></span>
+      <mat-menu #languageMenu="matMenu">
+
+        <mat-select placeholder="Favorite food">
+          <mat-option  *ngFor="let country of countries" [value]="country.name">
+            <span mat-menu-item>{{ country.name }}</span>
+          </mat-option>
+        </mat-select>
+
+        <span mat-menu-item>Item 1</span>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+    </span>
+
+  </div>
+
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+
+      <!-- header-nav links -->
+      <span *ngFor="let link of primaryNavLinks">
+        <a mat-button routerLink="{{link.route}}">{{link.label}}</a>
+      </span>
+
+      <!-- header-nav > learnMoreMenu links -->
+      <span><a mat-button [matMenuTriggerFor]="learnMoreMenu">Learn More</a></span>
+      <mat-menu #learnMoreMenu="matMenu">
+        <ng-container *ngFor="let link of learnMoreLinks">
+          <a mat-menu-item routerLink="{{link.route}}">{{link.label}}</a>
+          <hr *ngIf="link.bottomDivider">
+        </ng-container>
+      </mat-menu>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</header>

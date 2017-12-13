@@ -1,0 +1,107 @@
+@import '../bootstrap@4.0.0-beta.2/variables';
+
+$black-87-opacity: rgba($black, 0.87);
+$white-87-opacity: rgba($white, 0.87);
+$black-12-opacity: rgba($black, 0.12);
+$white-12-opacity: rgba($white, 0.12);
+$black-6-opacity:  rgba($black, 0.06);
+$white-6-opacity:  rgba($white, 0.06);
+
+$mg-palette: (
+  50:   #eceff1,
+  100:  #cfd8dc,
+  200:  #b0bec5,
+  300:  #90a4ae,
+  400:  #78909c,
+  500:  #607d8b,
+  600:  #546e7a,
+  700:  #455a64,
+  800:  #37474f,
+  900:  #263238,
+  A100: #cfd8dc,
+  A200: #b0bec5,
+  A400: #78909c,
+  A700: #455a64,
+  contrast: (
+    50:   $black-87-opacity,
+    100:  $black-87-opacity,
+    200:  $black-87-opacity,
+    300:  $black-87-opacity,
+    400:  $white,
+    500:  $white,
+    600:  $white-87-opacity,
+    700:  $white-87-opacity,
+    800:  $white-87-opacity,
+    900:  $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $white,
+    A700: $white-87-opacity,
+  )
+);
+
+$mg-accent-palette: (
+  50:   #eceff1,
+  100:  #cfd8dc,
+  200:  #b0bec5,
+  300:  #90a4ae,
+  400:  #78909c,
+  500:  #607d8b,
+  600:  #546e7a,
+  700:  #455a64,
+  800:  #37474f,
+  900:  #263238,
+  A100: #cfd8dc,
+  A200: #b0bec5,
+  A400: #78909c,
+  A700: #455a64,
+  contrast: (
+    50:   $black-87-opacity,
+    100:  $black-87-opacity,
+    200:  $black-87-opacity,
+    300:  $black-87-opacity,
+    400:  $white,
+    500:  $white,
+    600:  $white-87-opacity,
+    700:  $white-87-opacity,
+    800:  $white-87-opacity,
+    900:  $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $white,
+    A700: $white-87-opacity,
+  )
+);
+
+$mg-warn-palette: (
+  50:   #eceff1,
+  100:  #cfd8dc,
+  200:  #b0bec5,
+  300:  #90a4ae,
+  400:  #78909c,
+  500:  #607d8b,
+  600:  #546e7a,
+  700:  #455a64,
+  800:  #37474f,
+  900:  #263238,
+  A100: #cfd8dc,
+  A200: #b0bec5,
+  A400: #78909c,
+  A700: #455a64,
+  contrast: (
+    50:   $black-87-opacity,
+    100:  $black-87-opacity,
+    200:  $black-87-opacity,
+    300:  $black-87-opacity,
+    400:  $white,
+    500:  $white,
+    600:  $white-87-opacity,
+    700:  $white-87-opacity,
+    800:  $white-87-opacity,
+    900:  $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $white,
+    A700: $white-87-opacity,
+  )
+);

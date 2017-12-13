@@ -1,9 +1,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "module": "es6",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -12,8 +14,12 @@
       "node_modules/@types"
     ],
     "lib": [
+      "es6",
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@angular/*": ["node_modules/@angular/*"]
+    }
   }
 }
