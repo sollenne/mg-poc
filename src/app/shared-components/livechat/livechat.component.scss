@@ -1,0 +1,27 @@
+.live-chat-wrapper {
+  background: #DA291C;
+  width: 60px;
+  height: 225px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: block;
+  float: right;
+  right: 0;
+  position: fixed;
+  bottom: 40%;
+  z-index: 2147483647;
+  color: white;
+
+  .live-chat-anchor {
+    color: white;
+    display: block;
+    text-align: center;
+    position: relative;
+    top: 30%;
+    font-weight: lighter;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

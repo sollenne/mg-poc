@@ -1,0 +1,7 @@
+<div *ngIf="lesson$ | async as lesson">
+    <pre>
+      {{lesson | json}}
+    </pre>
+
+  <div [innerHtml]="lesson.productDescription | mdToHtml"></div>
+</div>

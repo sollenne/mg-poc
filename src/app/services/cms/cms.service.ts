@@ -4,16 +4,19 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { ConfigService } from '../config/config.service';
 
 @Injectable()
 
 export class CmsService {
-  private PATH_ROOT = 'http://dmnanlx9028.adnp.intmgi.com:7003/sites/';
-  private PATH_SITE = 'REST/resources/v1/aggregates/MGIPOC/';
+  private imagePath: string;
 
   constructor(
     private http: HttpClient,
-  ) { }
+  ) {
+
+    this.imagePath = `${ConfigService.appConfig.PATH_ROOT}${ConfigService.appConfig.PATH_IMAGES}`;
+  }
 
   private extractData = (res: Response) => {
     try {
@@ -44,9 +47,15 @@ export class CmsService {
   }
 
   public getModuleData = (PATH_MODULE: string): Observable<any> => {
-   return this.http.get(`${this.PATH_ROOT}${this.PATH_SITE}${PATH_MODULE}`)
-      .map(this.extractData)
-      .catch(this.handleError);
+    console.info(ConfigService.appConfig);
+
+    return this.http.get(`${ConfigService.appConfig.PATH_ROOT}${ConfigService.appConfig.PATH_SITE}${PATH_MODULE}`)
+        .map(this.extractData)
+        .catch(this.handleError);
+  }
+
+  public getImagePath = (IMAGE_ID: string): string => {
+    return `${this.imagePath}${IMAGE_ID}&blobkey=id&blobcol=urldata`;
   }
 
 }

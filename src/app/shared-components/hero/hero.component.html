@@ -1,1 +1,10 @@
-<img [src]="imgPath" alt="">
+<div class="hero-wrapper mb-5" [ngStyle]="{'background-image': 'url(' + imagePath + ')'}">
+  <div class="hero-content">
+    <h1>Send money your way</h1>
+    <button mat-button color="primary">Login</button>
+    <div class="clearfix"></div>
+    <a class="fraud-aware">
+      <img [src]="'https://secure.moneygram.com/rest/content/fraudAware.svg'" alt="">
+    </a>
+  </div>
+</div>

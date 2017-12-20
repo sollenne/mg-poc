@@ -9,7 +9,7 @@ import { CmsService } from '../../services/cms/cms.service';
 })
 export class HomepageComponent implements OnInit {
   public moduleData: any;
-  public homepage_hero = 'http://dmnanlx9028.adnp.intmgi.com:7003/sites/BlobServer?blobtable=MungoBlobs&blobwhere=1508791748788&blobkey=id&blobcol=urldata';
+  public homepage_hero = '1508791748788';
 
   constructor(
     private cmsService: CmsService,

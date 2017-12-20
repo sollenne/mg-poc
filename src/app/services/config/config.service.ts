@@ -6,19 +6,18 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 
 export class ConfigService {
-  public static appConfig: IAppConfig;
+  public static appConfig: any;
 
   constructor(
     private http: HttpClient,
   ) { }
-
 
   public load = (): Promise<IAppConfig> => {
     if (ConfigService.appConfig) {
       return Promise.resolve(ConfigService.appConfig);
     } else {
       return new Promise((resolve) => {
-        this.http.get(`${environment.configUrl}?v=${new Date().getTime()}`).map((res: IAppConfig) => res)
+        this.http.get(`${environment.configUrl}?v=${new Date().getTime()}`).map((res) => res)
           .subscribe((config) => {
             ConfigService.appConfig = config;
             resolve(ConfigService.appConfig);
