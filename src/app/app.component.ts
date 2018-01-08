@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ConfigService} from './services/config/config.service';
 
 @Component({
   selector: 'mg-root',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  constructor() {}
+  constructor(
+    private configService: ConfigService,
+  ) {
+    this.configService.load();
+  }
 
 }

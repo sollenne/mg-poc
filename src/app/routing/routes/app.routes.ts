@@ -18,6 +18,13 @@ import {SendMoneyOnlineComponent} from "../../views/static-views/send-money-onli
 
 const routes: Routes = [
   {
+    path: '',
+    component: HomepageComponent,
+    resolve: {
+      config: ConfigResolver,
+    },
+  },
+  {
     path: 'account',
     component: LoginpageComponent,
     resolve: {
@@ -41,13 +48,6 @@ const routes: Routes = [
   {
     path: 'send-money-online',
     component: SendMoneyOnlineComponent,
-  },
-  {
-    path: '',
-    component: HomepageComponent,
-    resolve: {
-      config: ConfigResolver,
-    },
   },
   {
     path: '**',

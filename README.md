@@ -1,6 +1,6 @@
-# Mg
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+## Publishing to github pages
+`ng build --prod --base-href "https://sollenne.com/mg-poc-demo/"`
+`ngh --repo="https://github.com/sollenne/mg-poc-demo.git"`
 
 ## Development server
 

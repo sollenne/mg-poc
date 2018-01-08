@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {CmsService} from '../../services/cms/cms.service';
+import {ConfigService} from '../../services/config/config.service';
 
 @Component({
   selector: 'mg-header',
@@ -11,8 +13,12 @@ export class HeaderComponent implements OnInit {
   public learnMoreLinks: Array<any>;
   public countries: any;
   public languages: any;
+  public cmsData: any;
 
-  constructor() {
+  constructor(
+    private cmsService: CmsService,
+    private configService: ConfigService,
+  ) {
   }
 
   public ngOnInit(): void {
@@ -21,6 +27,9 @@ export class HeaderComponent implements OnInit {
     this.getLearnMoreLinks();
     this.getCountryList();
     this.getLanguageList();
+    this.configService.load().then(() => {
+      this.cmsService.fetchDataFromOracleWebCenter('MGIPOC_Module_C/1508791754848');
+    });
   }
 
   public getCountryList = (): void => {

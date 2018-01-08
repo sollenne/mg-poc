@@ -7,6 +7,7 @@ import {Observable} from 'rxjs/Observable';
   templateUrl: './send-money-online.component.html',
   styleUrls: ['./send-money-online.component.scss']
 })
+
 export class SendMoneyOnlineComponent implements OnInit {
 
   public lesson$: Observable<any>;
