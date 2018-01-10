@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { ConfigService } from '../../services/config/config.service';
-import { CmsService } from '../../services/cms/cms.service';
+import { OracleService } from '../../services/oracle/oracle.service';
 
 @Component({
   selector: 'mg-hero',
@@ -15,11 +15,11 @@ export class HeroComponent implements OnInit {
 
   constructor(
     private configService: ConfigService,
-    private cmsService: CmsService,
+    private oracleService: OracleService,
   ) { }
 
   ngOnInit() {
-    this.imagePath = this.cmsService.getImagePath(this.imageId);
+    this.imagePath = this.oracleService.getImagePath(this.imageId);
   }
 
 }

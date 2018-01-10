@@ -28,8 +28,10 @@ import { MdToHtmlPipe } from './pipes/md-to-html.pipe';
  * @services
  */
 import { ConfigService } from './services/config/config.service';
-import { CmsService } from './services/cms/cms.service';
+import { OracleService } from './services/oracle/oracle.service';
 import { ContentfulService } from './services/contentful/contentful.service';
+import { SideNavService } from './services/sidenav/sidenav.service';
+import { AdobeService } from './services/adobe/adobe.service';
 
 /**
  * @components
@@ -67,10 +69,12 @@ import { SendMoneyOnlineComponent } from './views/static-views/send-money-online
     SendMoneyOnlineComponent,
   ],
   providers: [
-    CmsService,
+    OracleService,
     ContentfulService,
     ConfigService,
     ConfigResolver,
+    SideNavService,
+    AdobeService,
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy,

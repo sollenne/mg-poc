@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { Subscription } from 'rxjs/Subscription';
-// import { CmsService } from '../../services/cms/cms.service';
+// import { CmsService } from '../../services/oracle/oracle.service';
 
 @Component({
   selector: 'mg-homepage',
@@ -12,7 +12,7 @@ export class HomepageComponent implements OnInit {
   public homepage_hero = '1508791748788';
 
   constructor(
-    // private cmsService: CmsService,
+    // private oracleService: OracleService,
   ) { }
 
   public ngOnInit(): void {
@@ -21,7 +21,7 @@ export class HomepageComponent implements OnInit {
 
   // public getCmsModuleData = (): Subscription => {
   //
-  //   return this.cmsService.getModuleData('MGIPOC_Module_C/1508791748872?assetDepth=3&fields=HeroImage,HeroText')
+  //   return this.oracleService.getModuleData('MGIPOC_Module_C/1508791748872?assetDepth=3&fields=HeroImage,HeroText')
   //     .subscribe((res) => {
   //         this.moduleData = res;
   //         console.info(this.moduleData);

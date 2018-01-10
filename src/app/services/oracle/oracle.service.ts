@@ -23,7 +23,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 @Injectable()
 
-export class CmsService implements OnInit {
+export class OracleService implements OnInit {
   private imagePath: string;
 
   constructor(
@@ -34,8 +34,8 @@ export class CmsService implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.configService.load();
-    this.imagePath = `${ConfigService.appConfig.PATH_ROOT}${ConfigService.appConfig.PATH_IMAGES}`;
+    // this.configService.load();
+    // this.imagePath = `${ConfigService.appConfig.PATH_ROOT}${ConfigService.appConfig.PATH_IMAGES}`;
   }
 
   private extractData = (res: Response) => {

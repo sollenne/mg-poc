@@ -1,12 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {CmsService} from '../../services/cms/cms.service';
+import {OracleService} from '../../services/oracle/oracle.service';
 import {ConfigService} from '../../services/config/config.service';
+import {SideNavService} from '../../services/sidenav/sidenav.service';
 
 @Component({
   selector: 'mg-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent implements OnInit {
   public topHeaderLinks: Array<any>;
   public primaryNavLinks: Array<any>;
@@ -16,10 +18,10 @@ export class HeaderComponent implements OnInit {
   public cmsData: any;
 
   constructor(
-    private cmsService: CmsService,
+    private oracleService: OracleService,
     private configService: ConfigService,
-  ) {
-  }
+    private sidenavService: SideNavService,
+  ) {}
 
   public ngOnInit(): void {
     this.getTopHeaderLinks();
@@ -27,9 +29,14 @@ export class HeaderComponent implements OnInit {
     this.getLearnMoreLinks();
     this.getCountryList();
     this.getLanguageList();
-    this.configService.load().then(() => {
-      this.cmsService.fetchDataFromOracleWebCenter('MGIPOC_Module_C/1508791754848');
-    });
+    // this.configService.load().then(() => {
+    //   if (ConfigService.appConfig.)
+    //   this.oracleService.fetchDataFromOracleWebCenter('MGIPOC_Module_C/1508791754848');
+    // });
+  }
+
+  public toggleSidenav = (): void => {
+    this.sidenavService.toggle();
   }
 
   public getCountryList = (): void => {
