@@ -34,8 +34,8 @@ export class OracleService implements OnInit {
   }
 
   public ngOnInit(): void {
-    // this.configService.load();
-    // this.imagePath = `${ConfigService.appConfig.PATH_ROOT}${ConfigService.appConfig.PATH_IMAGES}`;
+    this.configService.load();
+    this.imagePath = `${ConfigService.appConfig.PATH_ROOT}${ConfigService.appConfig.PATH_IMAGES}`;
   }
 
   private extractData = (res: Response) => {

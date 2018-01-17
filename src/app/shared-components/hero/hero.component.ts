@@ -14,12 +14,13 @@ export class HeroComponent implements OnInit {
   public imagePath: string;
 
   constructor(
-    private configService: ConfigService,
     private oracleService: OracleService,
   ) { }
 
   ngOnInit() {
-    this.imagePath = this.oracleService.getImagePath(this.imageId);
+    if (ConfigService.appConfig.OracleWebcenterEnabled) {
+      this.imagePath = this.oracleService.getImagePath(this.imageId);
+    }
   }
 
 }

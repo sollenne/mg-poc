@@ -29,14 +29,18 @@ export class HeaderComponent implements OnInit {
     this.getLearnMoreLinks();
     this.getCountryList();
     this.getLanguageList();
-    // this.configService.load().then(() => {
-    //   if (ConfigService.appConfig.)
-    //   this.oracleService.fetchDataFromOracleWebCenter('MGIPOC_Module_C/1508791754848');
-    // });
+
+    this.configService.load().then(() => {
+      if (ConfigService.appConfig.OracleWebcenterEnabled) {
+        this.oracleService.fetchDataFromOracleWebCenter('MGIPOC_Module_C/1508791754848');
+      }
+    });
   }
 
   public toggleSidenav = (): void => {
-    this.sidenavService.toggle();
+    this.sidenavService.toggle().then(() => {
+      return;
+    });
   }
 
   public getCountryList = (): void => {
